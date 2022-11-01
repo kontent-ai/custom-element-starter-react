@@ -1,4 +1,4 @@
-# For more information do to https://github.com/Kentico/Home/wiki/CI-and-Automation-Guidelines
+# For more information do to https://github.com/kontent-ai/kontent-ai.github.io/blob/main/docs/articles/JavaScript-Node.js-GitHub-Actions-Guidelines.md
 
 name: "Build"   # Represents the name of the whole action.
 on:   # Specifies the section where we describe our build triggers.
