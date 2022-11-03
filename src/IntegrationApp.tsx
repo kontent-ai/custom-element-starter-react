@@ -99,8 +99,19 @@ IntegrationApp.displayName = 'IntegrationApp';
 
 type Config = Readonly<{
   // expected custom element's configuration
+  sampleProp: string;
 }>;
 
+// check it is the expected configuration
 const isConfig = (v: unknown): v is Config =>
+  isObject(v) &&
+  hasProperty('sampleProp')(v) &&
+  typeof v.sampleProp === 'string';
+
+const hasProperty = <PropertyName extends string>(propertyName: PropertyName) =>
+  <Input extends Record<PropertyKey, unknown>>(v: Input): v is Input & { [key in PropertyName]: unknown } =>
+    v.hasOwnProperty(propertyName);
+
+const isObject = (v: unknown): v is Record<PropertyKey, unknown> =>
   typeof v === 'object' &&
-  v !== null; // check it is the expected configuration
+  v !== null;

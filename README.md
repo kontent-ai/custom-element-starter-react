@@ -14,6 +14,14 @@ First you will need to install npm dependencies with `npm install`.
 Then use `npm run build` to build the integration or `npm run start` to start a local development server. 
 See https://create-react-app.dev/docs/available-scripts for more scripts.
 
+### Configuration
+
+The element requires a sample configuration with one property like the one below, to showcase config handling.
+```json
+{
+  "sampleProp": "<Any string you want.>"
+}
+```
 
 ## Contributing
 
