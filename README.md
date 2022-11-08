@@ -19,7 +19,7 @@ See https://create-react-app.dev/docs/available-scripts for more scripts.
 The element requires a sample configuration with one property like the one below, to showcase config handling.
 ```json
 {
-  "sampleProp": "<Any string you want.>"
+  "textElementCodename": "<Codename of a text element that this custom element can read>"
 }
 ```
 
