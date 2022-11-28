@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>CSS usage examples</title>
+	<link rel="stylesheet" type="text/css" href="kontent-ai-app-styles.css">
+	<style type="text/css">
+		body {
+			margin: 20px;
+		}
+
+		.inverted-bg {
+			padding: 10px;
+			background-color: rgb(37, 55, 86);
+			border-radius: 8px;
+		}
+
+		.btn + .btn {
+			margin-top: 12px;
+		}
+
+		.u-spacing-l:not(:first-child) {
+			margin-top: 16px;
+		}
+	</style>
+</head>
+<body>
+<h1>CSS usage examples</h1>
+
+<h2>Typography</h2>
+
+<i>Note: Typography styles use GT Walsheim Pro and Inter fonts, which aren't included in this repository. However, the fonts are included in the Kontent app and will work just fine there.</i>
+
+<p class="u-spacing-l headline-large">Headline Large</p>
+<p class="u-spacing-l headline-medium">Headline Medium</p>
+<p class="u-spacing-l headline-small">Headline Small</p>
+<p class="u-spacing-l subheadline">Subheadline</p>
+<p class="u-spacing-l subheadline-large">Subheadline Large</p>
+<p class="u-spacing-l title-large">Title Large</p>
+<p class="u-spacing-l title-medium">Title Medium</p>
+<p class="u-spacing-l title-small">Title Small</p>
+<p class="u-spacing-l body-large">Body Large</p>
+<p class="u-spacing-l body-medium">Body Medium</p>
+<p class="u-spacing-l body-small">Body Small</p>
+<p class="u-spacing-l body-large-emphasis">Body Large Emphasis</p>
+<p class="u-spacing-l body-medium-emphasis">Body Medium Emphasis</p>
+<p class="u-spacing-l body-small-emphasis">Body Small Emphasis</p>
+<p class="u-spacing-l label-large">Label Large</p>
+<p class="u-spacing-l label-medium">Label Medium</p>
+<p class="u-spacing-l label-small">Label Small</p>
+<p class="u-spacing-l label-large-emphasis">Label Large Emphasis</p>
+<p class="u-spacing-l label-medium-emphasis">Label Medium Emphasis</p>
+<p class="u-spacing-l label-small-emphasis">Label Small Emphasis</p>
+<p class="u-spacing-l caption">Caption</p>
+<p class="u-spacing-l action-large">Action Large</p>
+<p class="u-spacing-l action-medium">Action Medium</p>
+<p class="u-spacing-l action-small">Action small</p>
+<p class="u-spacing-l ui-paragraph">UI paragraph</p>
+
+<h2>Buttons</h2>
+<h3>Primary button</h3>
+<button class="btn btn--primary">Primary Button</button>
+<button class="btn btn--primary" disabled="">Disabled Primary Button</button>
+
+<h3>Primary button - inverted</h3>
+<div class="inverted-bg">
+	<button class="btn btn--primary-inverted">Primary Inverted Button</button>
+	<button class="btn btn--primary-inverted" disabled="">Disabled Primary Inverted Button</button>
+</div>
+
+<h3>Primary button - destructive</h3>
+<button class="btn btn--destructive-primary">Primary Destructive Button</button>
+<button class="btn btn--destructive-primary" disabled="">Disabled Primary Destructive Button</button>
+
+<h3>Secondary button</h3>
+<button class="btn btn--secondary">Secondary Button</button>
+<button class="btn btn--secondary" disabled="">Disabled Secondary Button</button>
+
+<h3>Secondary button - inverted</h3>
+<div class="inverted-bg">
+	<button class="btn btn--secondary-inverted">Secondary Inverted Button</button>
+	<button class="btn btn--secondary-inverted" disabled="">Disabled Secondary Inverted Button</button>
+</div>
+
+<h3>Secondary button - destructive</h3>
+<button class="btn btn--destructive-secondary">Secondary Destructive Button</button>
+<button class="btn btn--destructive-secondary" disabled="">Disabled Secondary Destructive Button</button>
+
+<h3>Tertiary button</h3>
+<button class="btn btn--tertiary">Tertiary Button</button>
+<button class="btn btn--tertiary" disabled="">Disabled Tertiary Button</button>
+
+<h3>Square Quinary button</h3>
+<button class="btn btn--square btn--quinary btn--square-quinary">
+	<i aria-hidden="true" class="icon-cogwheel"></i>
+</button>
+
+<h3>Button with icon</h3>
+<button class="btn btn--secondary">
+	<i class="icon-times btn__icon" aria-hidden="true"></i>
+	<span>Clear filter</span>
+</button>
+<button class="btn btn--secondary">
+	<span>Open different domain </span>
+	<i class="icon-arrow-right-top-square btn__icon btn__icon--trailing" aria-hidden="true"></i>
+</button>
+
+<h3>Small buttons</h3>
+<button class="btn btn--primary btn--s">Primary small button</button>
+<button class="btn btn--secondary btn--s">Secondary small button</button>
+<button class="btn btn--tertiary btn--s">Tertiary small button</button>
+
+<h3>Block buttons</h3>
+<div style="width: 300px;">
+	<button class="btn btn--primary btn--block">Primary block button</button>
+	<button class="btn btn--secondary btn--block">Secondary block button</button>
+</div>
+
+<h2>Checkboxes and Radio buttons</h2>
+<div class="option__list">
+	<div class="option__pane">
+		<input class="option__input--hidden">
+		<label class="option option--is-checkbox"><span class="option__label">Checkbox</span></label>
+	</div>
+	<div class="option__pane">
+		<input class="option__input--hidden">
+		<label class="option option--is-checkbox option--is-selected"><span class="option__label">Checkbox (selected)</span></label>
+	</div>
+	<div class="option__pane">
+		<input class="option__input--hidden">
+		<label class="option option--is-checkbox option--is-disabled"><span class="option__label">Checkbox (disabled)</span></label>
+	</div>
+	<div class="option__pane">
+		<input class="option__input--hidden">
+		<label class="option option--is-checkbox option--is-selected option--is-disabled"><span class="option__label">Checkbox (selected, disabled)</span></label>
+	</div>
+</div>
+<div class="option__list">
+	<div class="option__pane">
+		<input class="option__input--hidden">
+		<label class="option option--is-radio-button"><span class="option__label">Radio button</span></label>
+	</div>
+	<div class="option__pane">
+		<input class="option__input--hidden">
+		<label class="option option--is-radio-button option--is-selected"><span class="option__label">Radio button (selected)</span></label>
+	</div>
+	<div class="option__pane">
+		<input class="option__input--hidden">
+		<label class="option option--is-radio-button option--is-disabled"><span class="option__label">Radio button (disabled)</span></label>
+	</div>
+	<div class="option__pane">
+		<input class="option__input--hidden">
+		<label class="option option--is-radio-button option--is-selected option--is-disabled"><span class="option__label">Radio button (selected, disabled)</span></label>
+	</div>
+</div>
+
+<h2>Dropdown</h2>
+<div style="width: 300px;">
+	<h3>Default dropdown</h3>
+	<div class="combo-box combo-box">
+		<div
+			class="dropdown-selected"
+			aria-expanded="false"
+		>
+			<div class="dropdown-selected__pane">
+				<div class="dropdown-selected__text">Default project language</div>
+				<i
+					aria-hidden="true"
+					class="dropdown-selected__item-icon icon-chevron-down"
+					style="transform: rotate(360deg);"
+				></i>
+			</div>
+		</div>
+	</div>
+	<div class="dropdown-options" style="width: 300px; margin-top: 4px;">
+		<div class="dropdown-options__pane">
+			<div class="dropdown-options-group">
+				<div class="dropdown-options-title">Language variants</div>
+				<div class="dropdown-option switch-icon-select dropdown-option--is-selected">
+					<a class="dropdown-option__pane" href="#">
+						<div class="dropdown-option__name">Default project language</div>
+					</a>
+				</div>
+			</div>
+			<div class="dropdown-options-group">
+				<div class="dropdown-options-title">J. R. R. Tolkien</div>
+				<div class="dropdown-option switch-icon-select">
+					<a class="dropdown-option__pane" href="#">
+						<div class="dropdown-option__name">Elvish</div>
+					</a>
+				</div>
+				<div class="dropdown-option switch-icon-select">
+					<a class="dropdown-option__pane" href="#">
+						<div class="dropdown-option__name">Khuzdul</div>
+					</a>
+				</div>
+			</div>
+			<div class="dropdown-options-group">
+				<div class="dropdown-options-title">George R. R. Martin</div>
+				<div class="dropdown-option switch-icon-select">
+					<a class="dropdown-option__pane" href="#">
+						<div class="dropdown-option__name">High Valyrian</div>
+					</a>
+				</div>
+				<div class="dropdown-option switch-icon-select">
+					<a class="dropdown-option__pane" href="#">
+						<div class="dropdown-option__name">Dothraki</div>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<h3>Disabled dropdown</h3>
+	<div class="combo-box combo-box--is-disabled">
+		<div class="dropdown-selected" aria-expanded="false">
+			<div class="dropdown-selected__pane">
+				<div class="dropdown-selected__text">Default project language</div>
+				<i aria-hidden="true" class="dropdown-selected__item-icon icon-chevron-down" style="transform: rotate(0deg);"></i>
+			</div>
+		</div>
+	</div>
+	<h3>Dropdown has error</h3>
+	<div class="combo-box combo-box combo-box--has-error">
+		<div class="dropdown-selected" aria-expanded="false">
+			<div class="dropdown-selected__pane">
+				<div class="dropdown-selected__text">My project 🖤</div>
+				<i aria-hidden="true" class="dropdown-selected__item-icon icon-chevron-down" style="transform: rotate(720deg);"></i>
+			</div>
+		</div>
+	</div>
+</div>
+
+<h2>Dropdown menu</h2>
+<div style="position: relative;">
+	<div class="dropdown-options" style="max-width: 200px;">
+		<div class="dropdown-options__pane">
+			<div class="dropdown-options-group">
+				<div class="dropdown-option">
+					<div class="dropdown-option__pane">
+						<span class="dropdown-option__name">Link to submenu</span>
+						<span class="dropdown-option__icon"><i class="icon-chevron-right" aria-hidden="true"></i></span>
+					</div>
+				</div>
+				<div class="dropdown-option">
+					<div class="dropdown-option__pane">
+						<span class="dropdown-option__name">Longl link to submenu</span>
+						<span class="dropdown-option__icon"><i class="icon-chevron-right" aria-hidden="true"></i></span>
+					</div>
+				</div>
+				<div class="dropdown-option">
+					<div class="dropdown-option__pane">
+						<span class="dropdown-option__name">Edit</span>
+					</div>
+				</div>
+				<div class="dropdown-option dropdown-option--is-disabled">
+					<div class="dropdown-option__pane">
+						<span class="dropdown-option__name">Delete</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<h2>Multi select</h2>
+<div style="width: 500px;">
+	<div class="multi-select multi-select--has-focus">
+		<div class="multi-select__option-area">
+			<div class="multi-select__option-wrapper">
+				<div class="multi-select__option multi-select__option--product">
+					<div class="multi-select__option-name">Barista</div>
+					<div class="multi-select__option-remove-button"><i class="icon-times"></i></div>
+				</div>
+			</div>
+			<div class="multi-select__search-field"><span class="multi-select__search-text" contenteditable="true"></span></div>
+
+			<span class="sr-only">Select options</span>
+		</div>
+		<div class="multi-select__drop-down-actions">
+			<div class="multi-select__drop-down-expand">
+				<i class="multi-select__drop-down-icon icon-chevron-down" aria-hidden="true"></i>
+			</div>
+		</div>
+	</div>
+
+	<div class="multi-select__dropdown" style="margin-top: 4px;">
+		<div class="multi-select__dropdown-options">
+			<div class="multi-select__dropdown-option multi-select__dropdown-option--is-category">
+				<div class="multi-select__dropdown-option-name">Personas</div>
+			</div>
+			<div class="multi-select__dropdown-option">
+				<div class="multi-select__dropdown-option-name">Coffee expert</div>
+			</div>
+			<div class="multi-select__dropdown-option multi-select__dropdown-option--is-selected">
+				<div class="multi-select__dropdown-option-name">
+					<div class="multi-select__dropdown-option-indent">Barista</div>
+				</div>
+			</div>
+			<div class="multi-select__dropdown-option">
+				<div class="multi-select__dropdown-option-name">
+					<div class="multi-select__dropdown-option-indent">Cafe owner</div>
+				</div>
+			</div>
+			<div class="multi-select__dropdown-option multi-select__dropdown-option--is-highlighted">
+				<div class="multi-select__dropdown-option-name">Coffee enthusiast</div>
+			</div>
+			<div class="multi-select__dropdown-option">
+				<div class="multi-select__dropdown-option-name">
+					<div class="multi-select__dropdown-option-indent">Coffee lover</div>
+				</div>
+			</div>
+			<div class="multi-select__dropdown-option">
+				<div class="multi-select__dropdown-option-name">
+					<div class="multi-select__dropdown-option-indent">Coffee blogger</div>
+				</div>
+			</div>
+			<div class="multi-select__dropdown-option multi-select__dropdown-option--is-category">
+				<div class="multi-select__dropdown-option-name">Processing</div>
+			</div>
+			<div class="multi-select__dropdown-option">
+				<div class="multi-select__dropdown-option-name">Wet (Washed)</div>
+			</div>
+			<div class="multi-select__dropdown-option">
+				<div class="multi-select__dropdown-option-name">Dry (Natural)</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<h2>Inputs</h2>
+<div style="width: 500px;">
+	<h3>Editable input</h3>
+	<div class="text-field">
+		<input class="text-field__input" type="text" value="Some initial value">
+	</div>
+	<h3>Invalid input</h3>
+	<div class="text-field text-field--has-error ">
+		<input class="text-field__input" type="text" value="Some invalid value">
+	</div>
+</div>
+
+<h2>Status indicator</h2>
+<span class="status">Required</span>
+<span class="status status--is-ready">Ready</span>
+<span class="status status--is-all-done">Done</span>
+<span class="status status--filled-correctly">Filled correctly</span>
+<span class="status status--is-missing">Missing</span>
+<span class="status status--filled-incorrectly">Filled incorrectly</span>
+<span class="status status--validation-failed">Validation failed</span>
+
+<h2>Switch</h2>
+<div class="switch-wrapper">
+	<input id="switchId" type="checkbox" checked="" hidden="" value="on">
+	<label class="switch" for="switchId"></label>
+	<span class="switch__label">Active</span>
+</div>
+
+<h2>Tree</h2>
+<div class="tree">
+	<ul class="tree__list">
+		<ul class="tree__list tree__list--is-expanded">
+			<li class="tree__node">
+				<div class="tree__item tree__item--is-expanded">
+					<div class="tree__expand-area">
+						<i class="icon-chevron-down tree__expand-action tree__expand-action--is-expanded tree__expand-action--is-disabled"></i>
+					</div>
+					<div class="option__pane">
+						<input class="option__input--hidden"><label class="tree__name tree__name--is-selectable"><span>Home</span></label>
+					</div>
+				</div>
+				<ul class="tree__list tree__list--is-expanded"></ul>
+			</li>
+			<li class="tree__node">
+				<div class="tree__item tree__item--is-expanded">
+					<div class="tree__expand-area"><i class="icon-chevron-down tree__expand-action tree__expand-action--is-expanded"></i>
+					</div>
+					<div class="option__pane">
+						<input class="option__input--hidden"><label class="tree__name tree__name--is-selectable"><span>Products</span></label>
+					</div>
+				</div>
+				<ul class="tree__list tree__list--is-expanded">
+					<li class="tree__node">
+						<div class="tree__item tree__item--is-expanded">
+							<div class="tree__expand-area">
+								<i class="icon-expand-tree tree__expand-action tree__expand-action--is-expanded tree__expand-action--is-disabled"></i>
+							</div>
+							<div class="option__pane">
+								<input class="option__input--hidden"><label class="tree__name tree__name--is-selectable"><span>Coffee</span></label>
+							</div>
+						</div>
+						<ul class="tree__list tree__list--is-expanded"></ul>
+					</li>
+					<li class="tree__node">
+						<div class="tree__item tree__item--is-expanded">
+							<div class="tree__expand-area">
+								<i class="icon-expand-tree tree__expand-action tree__expand-action--is-expanded tree__expand-action--is-disabled"></i>
+							</div>
+							<div class="option__pane">
+								<input class="option__input--hidden"><label class="tree__name tree__name--is-selectable"><span>Brewers</span></label>
+							</div>
+						</div>
+						<ul class="tree__list tree__list--is-expanded"></ul>
+					</li>
+					<li class="tree__node">
+						<div class="tree__item tree__item--is-expanded">
+							<div class="tree__expand-area">
+								<i class="icon-expand-tree tree__expand-action tree__expand-action--is-expanded tree__expand-action--is-disabled"></i>
+							</div>
+							<div class="option__pane">
+								<input class="option__input--hidden"><label class="tree__name tree__name--is-selectable"><span>Accessories</span></label>
+							</div>
+						</div>
+						<ul class="tree__list tree__list--is-expanded"></ul>
+					</li>
+					<li class="tree__node">
+						<div class="tree__item tree__item--is-expanded">
+							<div class="tree__expand-area">
+								<i class="icon-expand-tree tree__expand-action tree__expand-action--is-expanded tree__expand-action--is-disabled"></i>
+							</div>
+							<div class="option__pane">
+								<input class="option__input--hidden"><label class="tree__name tree__name--is-selectable tree__name--is-selected"><span>Grinders</span></label>
+							</div>
+						</div>
+						<ul class="tree__list tree__list--is-expanded"></ul>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</ul>
+</div>
+</body>
+</html>
