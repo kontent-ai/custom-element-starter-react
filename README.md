@@ -15,7 +15,7 @@ You can inspire yourself by browsing already created integrations [**here**](htt
 
 If you wish to include your integration into the mentioned list, please add the **kontent-ai-integration** topic into your github integration repository. 
 
-Additional information and tutorials can be found on [kontent-ai.github.io](https://kontent-ai.github.io/).
+Additional Kontent.ai GitHub resources and tutorials can be found on [kontent-ai.github.io](https://kontent-ai.github.io/).
 
 <br />
 
