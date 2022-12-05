@@ -99,7 +99,7 @@ useLayoutEffect(() => {
 
 ### More functions
 
-You can find much all of the available Custom Element functions in our [Custom Element API reference](https://kontent.ai/learn/reference/custom-elements-js-api/).
+You can find all of the available Custom Element functions in our [Custom Element API reference](https://kontent.ai/learn/reference/custom-elements-js-api/).
 
 ## Contributing
 
