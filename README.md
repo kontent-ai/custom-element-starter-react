@@ -11,7 +11,7 @@
 
 This template can be used to jumpstart your own custom element development with Kontent.ai. It contains all the necessary tools for creating a new [Custom Element](https://kontent.ai/learn/tutorials/develop-apps/integrate/content-editing-extensions/), a UI extension for content editors. 
 
-You can inspire yourself by browsing already created integrations [**here**](https://github.io/topics/kontent-ai-integration).
+You can inspire yourself by browsing already created integrations [**here**](https://github.com/topics/kontent-ai-integration).
 
 If you wish to include your integration into the mentioned list, please add the **kontent-ai-integration** topic into your github integration repository. 
 
