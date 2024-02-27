@@ -21,14 +21,14 @@ Additional Kontent.ai GitHub resources and tutorials can be found on [kontent-ai
 
 ## Getting Started
 
-The integration is created with [Create React App](https://create-react-app.dev/). 
+The integration is created with [Vite](https://vitejs.dev/). 
 
 This template aims to showcase the possibilities. It is storing the data from the displayed input, it is observing another text element specified in the configuration, and displays the context provided by the Kontent.ai app.
 
 It is also showcasing how you can select other content items as well as assets within the custom element.
-First you will need to install npm dependencies with `npm install`. 
-Then use `npm run build` to build the integration or `npm run start` to start a local development server. 
-See https://create-react-app.dev/docs/available-scripts for more scripts.
+First you will need to install npm dependencies with `npm ci`. 
+Then use `npm run build` to build the integration or `npm run dev` to start a local development server. 
+See [Vite guide](https://vitejs.dev/guide/#command-line-interface) for more available commands.
 
 ### Configuration
 

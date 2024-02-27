@@ -109,10 +109,10 @@ const isConfig = (v: unknown): v is Config =>
   hasProperty(nameOf<Config>('textElementCodename'), v) &&
   typeof v.textElementCodename === 'string';
 
-const hasProperty = <PropName extends string, Input extends {}>(propName: PropName, v: Input): v is Input & { [key in PropName]: unknown } =>
-  v.hasOwnProperty(propName);
+const hasProperty = <PropName extends string, Input extends object>(propName: PropName, v: Input): v is Input & { [key in PropName]: unknown } =>
+  propName in v;
 
-const isObject = (v: unknown): v is {} =>
+const isObject = (v: unknown): v is object =>
   typeof v === 'object' &&
   v !== null;
 
