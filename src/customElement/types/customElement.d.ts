@@ -51,7 +51,7 @@ type ItemChangedDetails = Readonly<{
 type ElementInfo = Readonly<{
   config: Readonly<Record<string, unknown>> | null;
   disabled: boolean;
-  value: string;
+  value: string | null;
 }>;
 
 type Context = Readonly<{

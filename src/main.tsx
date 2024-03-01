@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { EnsureKontentAsParent } from "./EnsureKontentAsParent";
+import { EnsureKontentAsParent } from "./customElement/EnsureKontentAsParent";
 import { IntegrationApp } from './IntegrationApp';
+import { CustomElementContext } from './customElement/CustomElementContext';
 
 const rootElement = document.getElementById('root');
 
@@ -14,7 +15,9 @@ const root = ReactDOM.createRoot(rootElement);
 root.render(
   <React.StrictMode>
     <EnsureKontentAsParent>
-      <IntegrationApp />
+      <CustomElementContext height={500}>
+        <IntegrationApp />
+      </CustomElementContext>
     </EnsureKontentAsParent>
   </React.StrictMode>
 );
