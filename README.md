@@ -9,7 +9,7 @@
 
 # Kontent.ai React Custom Element Starter
 
-This starter can be used to jumpstart your own custom element development with Kontent.ai. It contains all the necessary tools for creating a new [Custom Element](https://kontent.ai/learn/docs/custom-elements), a UI extension for content editors. 
+This starter can be used to jumpstart your own custom element development with Kontent.ai. It contains all the necessary tools for creating a new [Custom Element](https://kontent.ai/learn/docs/custom-elements), a UI extension for content editors.
 
 You can inspire yourself by browsing already created integrations [**here**](https://github.com/topics/kontent-ai-integration).
 
@@ -18,6 +18,16 @@ If you wish to include your integration into the mentioned list, please add the 
 Additional Kontent.ai GitHub resources and tutorials can be found on [kontent-ai.github.io](https://kontent-ai.github.io/).
 
 # Getting Started
+
+## Running the project
+
+The integration is created with [Vite](https://vitejs.dev/). 
+
+1. Install dependencies with `npm ci`.
+2. Run a local development server with `npm run dev`.
+3. To deploy the element you can use the output of running `npm run build` command that you can find in the `dist` folder.
+
+See [Vite guide](https://vitejs.dev/guide/#command-line-interface) for more available commands.
 
 ## Define your Element's API
 
@@ -89,16 +99,6 @@ The function returns details of the selected items.
 Use this function to prompt the user to select assets.
 You can specify whether they should select only one or several and whether they should only select images or any asset.
 The function returns details of the selected assets.
-
-## Running the project
-
-The integration is created with [Vite](https://vitejs.dev/). 
-
-1. Install dependencies with `npm ci`.
-2. Run a local development server with `npm run dev`.
-3. To deploy the element you can use the output of running `npm run build` command that you can find in the `dist` folder.
-
-See [Vite guide](https://vitejs.dev/guide/#command-line-interface) for more available commands.
 
 # Structure of the Custom Element
 
