@@ -7,9 +7,9 @@
 [![Discord][discord-shield]][discord-url]
 
 
-# Kontent.ai React Integration Template
+# Kontent.ai React Custom Element Starter
 
-This template can be used to jumpstart your own custom element development with Kontent.ai. It contains all the necessary tools for creating a new [Custom Element](https://kontent.ai/learn/tutorials/develop-apps/integrate/content-editing-extensions/), a UI extension for content editors. 
+This starter can be used to jumpstart your own custom element development with Kontent.ai. It contains all the necessary tools for creating a new [Custom Element](https://kontent.ai/learn/docs/custom-elements), a UI extension for content editors.
 
 You can inspire yourself by browsing already created integrations [**here**](https://github.com/topics/kontent-ai-integration).
 
@@ -17,99 +17,115 @@ If you wish to include your integration into the mentioned list, please add the 
 
 Additional Kontent.ai GitHub resources and tutorials can be found on [kontent-ai.github.io](https://kontent-ai.github.io/).
 
-<br />
+# Getting Started
 
-## Getting Started
+## Running the project
 
 The integration is created with [Vite](https://vitejs.dev/). 
 
-This template aims to showcase the possibilities. It is storing the data from the displayed input, it is observing another text element specified in the configuration, and displays the context provided by the Kontent.ai app.
+1. Install dependencies with `npm ci`.
+2. Run a local development server with `npm run dev`.
+3. To deploy the element you can use the output of running `npm run build` command that you can find in the `dist` folder.
 
-It is also showcasing how you can select other content items as well as assets within the custom element.
-First you will need to install npm dependencies with `npm ci`. 
-Then use `npm run build` to build the integration or `npm run dev` to start a local development server. 
 See [Vite guide](https://vitejs.dev/guide/#command-line-interface) for more available commands.
 
-### Configuration
+## Define your Element's API
 
-The element requires a sample configuration with one property like the one below, to showcase config handling.
-```json
-{
-  "textElementCodename": "<Codename of a text element that this custom element can read>"
-}
-```
+There are two main things that you'll need to define.
+* What configuration will your custom element need. (This is provided in the configuration when adding the custom element into a content type)
+* What value will the custom element save. In what format (the value needs to be serialized into string).
 
-## Structure of the Kontent.ai Custom Element
+You can define the shape of your configuration in the `src/customElement/config.ts` file along with a validation function that will show the user an error when the provided configuration is not valid.
 
-### Link the Custom Element API
+In the same way you can define the shape of your value in the `src/customElement/value.ts` file along with a parsing function from a string. Usually, the most flexible format is json serialized into the string.
 
-Every Kontent.ai custom element needs the [Custom Element API](https://kontent.ai/learn/reference/custom-elements-js-api/) to work properly. You should include it in your `html` file like this: https://github.com/kontent-ai/custom-element-template-react/blob/e184179039aa705a82722d778e503dfb511f7115/public/index.html#L8-L10
+## Define your Element's height handling
 
-#### (Optionally) Include Kontent.ai styles
+The width of the custom element is always the full width of the editing element in the Kontent.ai app. However, the height can be defined by the element itself.
+In the `src/main.tsx` file you can find the usage of the `CustomElementContext` where you can define the height of your element.
+It can either be a specific size in pixels, `"default"` to use the default value or `"dynamic"` to resize the element based on the height of the element's body element.
 
-If you want your custom element to look like a part of the Kontent.ai app, you'll need to include the Kontent.ai CSS file. You can find it [here in this repository](https://github.com/kontent-ai/custom-element-template-react/blob/main/public/kontent-ai-app-styles.css). You have to include the [font file](https://github.com/kontent-ai/custom-element-template-react/blob/main/public/kontent-ai-icons-v3.0.1.woff2) as well. https://github.com/kontent-ai/custom-element-template-react/blob/e184179039aa705a82722d778e503dfb511f7115/public/index.html#L5-L7
+## Write your Element
 
-### Initialize the custom element
+You can start building the element in the `src/IntegrationApp.tsx` file where you can find example usage of several utilities defined in this repository that might come in useful.
 
-Before you start any interaction with the Kontent.ai app, you'll need **initialize the custom element**. You can do that by calling the `init` function from the provided API like so https://github.com/kontent-ai/custom-element-template-react/blob/e184179039aa705a82722d778e503dfb511f7115/src/IntegrationApp.tsx#L18-L29
-and waiting until the callback you passed into the `init` function is called. You'll receive the custom element configuration object of your specification, as well as additional context - more on that in [the documentation](https://kontent.ai/learn/reference/custom-elements-js-api/#a-init-method). 
-You can leverage state in React to store the important configuration while setting it inside of the initialization callback. 
+## Utilities in this repository
 
+### useConfig
+
+Use this hook to get the configuration provided for this custom element.
+The configuration will be valid based on the validation function you defined in `src/customElement/config.ts` and will be of the `Config` type also defined in the file.
+
+### useValue
+
+Use this hook to get the current value of the element and a function to update the value.
+The value will be parsed using the function defined in `src/customElement/value.ts` and will be of the `Value` type also defined in the file.
+Example:
 ```ts
-const [config, setConfig] = useState<Config | null>(null);
-
-useEffect(() => {
-  CustomElement.init((element, context) => {
-    if (!isValidConfig(element.config)) {
-      throw new Error('Not the config this element expects');
-    }
-    setConfig(element.config);
-    // more logic
-  });
-}, []);
+const [value, setValue] = useValue();
 ```
 
-### Disable your element if needed
+### useIsDisabled
 
-In certain circumstances, the Kontent.ai app might instruct your custom element to display itself in a **disabled state**. Disabled state means that the value of your element cannot be changed. This can happen when the edited item is published (therefore cannot be edited), or the current user does not have permission to edit the custom element.
+This hook indicates whether your element should appear disabled. (e.g. when the item is published or the user doesn't have permission to modify the item)
+It subscribes to changes so the returned value will always be up-to-date.
 
-In order for the custom element to always have up-to-date information about the disabled state, you should:
-1) Save the `element.disabled` flag from the argument of the `init` function. https://github.com/kontent-ai/custom-element-template-react/blob/e184179039aa705a82722d778e503dfb511f7115/src/IntegrationApp.tsx#L25
-2) Subscribe for the flag changes with [`CustomElement.onDisabledChanged`](https://kontent.ai/learn/reference/custom-elements-js-api/#a-ondisabledchanged-method) function. In React you can do that like so. https://github.com/kontent-ai/custom-element-template-react/blob/e184179039aa705a82722d778e503dfb511f7115/src/IntegrationApp.tsx#L36-L38
-3) Use the flag in your custom element to prevent the user from editing anything as the Kontent.ai will refuse to save any changes when your element should be disabled.
+### useEnvironmentId
 
-### Set the value
+Returns the environment id of this element's content item.
 
-You might also want to set the value of your custom element. The value can only be of type string or null (null represents no value and if the element is required having null as value will fail the item's validation). However, you can easily `JSON.stringify` and conversly `JSON.parse` any [json-serializable](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify#description) the saved value.
-To save a value, simply call the [`CustomElement.setValue`](https://kontent.ai/learn/reference/custom-elements-js-api/#a-setvalue-method) and pass it the value.
-This value is accessible through the Delivery API, and can be used and rendered on your website, or in your application.
+### useItemInfo
 
-### Adjust the height
+Gets information about the element's content item. 
+See the `ItemDetail` type in the `src/customElement/types/customElement.d.ts` file for details of available item information.
 
-In some cases, the default height of custom elements will not be enough for the application you are trying to render inside of it. In that case, you can set your custom height with the [`CustomElement.setHeight`](https://kontent.ai/learn/reference/custom-elements-js-api/#a-setheight-method) function. This resize function can be  changed as the required height value itself changes, which helps you omit the unpleasant scrolling of the iframe your element is rendered in. 
-In the following React example we update the element's size whenever some value affecting the element's size changes and set the height to the document's height with a minimum of 100px.
+### useVariantInfo
 
-```ts
-const updateSize = useCallback(() => {
-  const newSize = Math.max(document.documentElement.offsetHeight, 100);
+Gets the element's language id and codename.
 
-  CustomElement.setHeight(Math.ceil(newSize));
-}, []);
+### useElements
 
-useLayoutEffect(() => {
-  updateSize();
-}, [updateSize, currentValue, searchResults]);
-```
+Use this hook to get values of the specified elements (accepts element codenames). 
+The hook subscribes to element changes so the returned values will always be up-to-date.
 
-### More functions
+### promptToSelectItems
 
-You can find all of the available Custom Element functions in our [Custom Element API reference](https://kontent.ai/learn/reference/custom-elements-js-api/).
+Use this function to prompt the user to select content items.
+You can specify whether they should select only one or several.
+The function returns details of the selected items.
 
-## Contributing
+### promptToSelectAssets
+
+Use this function to prompt the user to select assets.
+You can specify whether they should select only one or several and whether they should only select images or any asset.
+The function returns details of the selected assets.
+
+# Structure of the Custom Element
+
+## Static resources in the `index.html` file
+
+Every Kontent.ai custom element needs the [Custom Element API](https://kontent.ai/learn/reference/custom-elements-js-api/) to work properly.
+This custom element is no exception and you can find it linked in the `index.html` template in the root of the repository.
+
+Additionally, you can find there linked a CSS file from the `public` folder.
+This contains Kontent.ai styling that you can leverage to make your custom element look similar to the rest of the Kontent.ai app.
+It also includes Kontent.ai font.
+
+## `CustomElementContext`
+
+This is the core of the connection to the Custom Element API.
+You can find here the call to the `CustomElement.init` function that initializes the custom element and populates the React context with useful information like the element's value, config and so on.
+It also handles handles height of the custom element using the supplied prop `height`.
+
+## `selectors.ts`
+
+Here you can find the implementation of most of the wrappers around the Custom Element API.
+
+# Contributing
 
 For Contributing please see  [`CONTRIBUTING.md`](CONTRIBUTING.md) for more information.
 
-## License
+# License
 
 Distributed under the MIT License. See [`LICENSE.md`](./LICENSE.md) for more information.
 
