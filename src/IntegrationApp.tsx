@@ -31,22 +31,28 @@ export const IntegrationApp = () => {
 
   return (
     <div>
-      <h1>Build your custom element here.</h1>
-      {/* To avoid unused warnings from the examples */}
-      Some data: {JSON.stringify({
-        selectedAssetNames,
-        selectedItemNames,
-        elementValue,
-        setElementValue,
-        isDisabled,
-        config,
-        projectId,
-        item,
-        variant,
-        watchedElementsValues,
-        selectAssets,
-        selectItems,
-      })}
+      <h2>Build your custom element here.</h2>
+      <button onClick={selectAssets}>Select an asset</button>
+      <h2>Selected assets</h2>
+      <section>{selectedAssetNames.join(", ")}</section>
+
+      <h2>Loaded data</h2>
+      <section>
+        {JSON.stringify({
+          selectedAssetNames,
+          selectedItemNames,
+          elementValue,
+          setElementValue,
+          isDisabled,
+          config,
+          projectId,
+          item,
+          variant,
+          watchedElementsValues,
+          selectAssets,
+          selectItems,
+        })}
+      </section>
     </div>
   );
 };
