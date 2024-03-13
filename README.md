@@ -130,15 +130,15 @@ For Contributing please see  [`CONTRIBUTING.md`](CONTRIBUTING.md) for more infor
 Distributed under the MIT License. See [`LICENSE.md`](./LICENSE.md) for more information.
 
 
-[contributors-shield]: https://img.shields.io/github/contributors/kontent-ai/integration-template-react.svg?style=for-the-badge
-[contributors-url]: https://github.com/kontent-ai/integration-template-react/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/kontent-ai/integration-template-react.svg?style=for-the-badge
-[forks-url]: https://github.com/kontent-ai/integration-template-react/network/members
-[stars-shield]: https://img.shields.io/github/stars/kontent-ai/integration-template-react.svg?style=for-the-badge
-[stars-url]: https://github.com/kontent-ai/integration-template-react/stargazers
-[issues-shield]: https://img.shields.io/github/issues/kontent-ai/integration-template-react.svg?style=for-the-badge
-[issues-url]:https://github.com/kontent-ai/integration-template-react/issues
-[license-shield]: https://img.shields.io/github/license/kontent-ai/integration-template-react.svg?style=for-the-badge
-[license-url]:https://github.com/kontent-ai/integration-template-react/blob/master/LICENSE.md
+[contributors-shield]: https://img.shields.io/github/contributors/kontent-ai/custom-element-starter-react.svg?style=for-the-badge
+[contributors-url]: https://github.com/kontent-ai/custom-element-starter-react/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/kontent-ai/custom-element-starter-react.svg?style=for-the-badge
+[forks-url]: https://github.com/kontent-ai/custom-element-starter-react/network/members
+[stars-shield]: https://img.shields.io/github/stars/kontent-ai/custom-element-starter-react.svg?style=for-the-badge
+[stars-url]: https://github.com/kontent-ai/custom-element-starter-react/stargazers
+[issues-shield]: https://img.shields.io/github/issues/kontent-ai/custom-element-starter-react.svg?style=for-the-badge
+[issues-url]:https://github.com/kontent-ai/custom-element-starter-react/issues
+[license-shield]: https://img.shields.io/github/license/kontent-ai/custom-element-starter-react.svg?style=for-the-badge
+[license-url]:https://github.com/kontent-ai/custom-element-starter-react/blob/master/LICENSE.md
 [discord-shield]: https://img.shields.io/discord/821885171984891914?color=%237289DA&label=Kontent.ai%20Discord&logo=discord&style=for-the-badge
 [discord-url]: https://discord.com/invite/SKCxwPtevJ
