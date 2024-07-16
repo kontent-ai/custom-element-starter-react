@@ -16,7 +16,7 @@ export const useEnvironmentId = () => useContext(Context).environmentId;
 export const useItemInfo = () => useContext(Context).item;
 
 export const useVariantInfo = () => useContext(Context).variant;
-/* eslint-disable react-refresh/only-export-components */
+/* eslint-enable react-refresh/only-export-components */
 
 type CustomElementContext = Readonly<{
   config: Config;
