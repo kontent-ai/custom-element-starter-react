@@ -4031,9 +4031,6 @@ input[type=checkbox]:disabled{
 .checkbox--alternative-colors .checkbox__input:focus+.checkbox__symbol:before,.checkbox--default-colors .checkbox__input:focus+.checkbox__symbol:before{
   box-shadow:0 0 0 2px #0093ff,inset 0 0 3px 0 #0093ff,0 0;
 }
-.js-focus-visible .checkbox--alternative-colors .checkbox__input:focus+.checkbox__symbol:before:focus:not(.focus-visible),.js-focus-visible .checkbox--default-colors .checkbox__input:focus+.checkbox__symbol:before:focus:not(.focus-visible){
-  box-shadow:0 0;
-}
 .js-focus-visible .checkbox--alternative-colors .checkbox__input:focus:not(.focus-visible)+.checkbox__symbol:before,.js-focus-visible .checkbox--default-colors .checkbox__input:focus:not(.focus-visible)+.checkbox__symbol:before{
   box-shadow:none;
 }
